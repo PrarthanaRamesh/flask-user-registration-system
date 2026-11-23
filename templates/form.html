@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Information Form</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+
+<div class="page-container">
+    <div class="form-container">
+
+        <h2>User Information Form</h2>
+
+        <form action="/submit" method="POST" enctype="multipart/form-data">
+
+            
+            <div class="section">
+                <h3>Personal Details</h3>
+
+                <label>Name</label>
+                <input type="text" name="name" required>
+
+                <label>Email</label>
+                <input type="email" name="email" required>
+
+                <label>Phone Number</label>
+                <input type="text" name="phone" maxlength="10" required>
+
+                <label>Date of Birth</label>
+                <input type="date" name="dob" required>
+
+                <label>Address</label>
+                <textarea name="address" rows="3" required></textarea>
+            </div>
+
+            
+            <div class="section">
+                <h3>Location Details</h3>
+
+                <label>Country</label>
+                <select name="country" id="country" required>
+                    <option value="">-- Select Country --</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label>State</label>
+                <select name="state" id="state" required>
+                    <option value="">-- Select State --</option>
+                </select>
+            </div>
+
+           
+            <div class="section">
+                <h3>Demographic Details</h3>
+
+                <label>Gender</label>
+                <div class="options">
+                    <input type="radio" name="gender" value="Male" required> Male<br>
+                    <input type="radio" name="gender" value="Female"> Female<br>
+                    <input type="radio" name="gender" value="Other"> Other
+                </div>
+
+                <label>Education Level</label>
+                <select name="education" required>
+                    <option value="">-- Select --</option>
+                    <option value="High School">High School</option>
+                    <option value="Undergraduate">Undergraduate</option>
+                    <option value="Postgraduate">Postgraduate</option>
+                </select>
+
+                <label>Interests</label>
+                <div class="options">
+                    <input type="checkbox" name="interests" value="Music"> Music<br>
+                    <input type="checkbox" name="interests" value="Sports"> Sports<br>
+                    <input type="checkbox" name="interests" value="Traveling"> Traveling<br>
+                    <input type="checkbox" name="interests" value="Cooking"> Cooking<br>
+                    <input type="checkbox" name="interests" value="Gaming"> Gaming<br>
+                    <input type="checkbox" name="interests" value="Art"> Art<br>
+                    <input type="checkbox" name="interests" value="Technology"> Technology<br>  
+                    <input type="checkbox" name="interests" value="Fitness"> Fitness<br>
+                    <input type="checkbox" name="interests" value="Photography"> Photography<br>
+                    <input type="checkbox" name="interests" value="Reading"> Reading
+                </div>
+            </div>
+
+            
+            <div class="section">
+                <h3>Transcripts</h3>
+
+                <label>Upload Transcript (PDF / Image)</label>
+                <input type="file" name="transcript" accept=".pdf,.jpg,.jpeg,.png" required>
+            </div>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
